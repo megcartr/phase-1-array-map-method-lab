@@ -12,5 +12,15 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  const breakDowWordsAndSpaces = tutorials.map((space => space.split(" ")));
+  console.log(breakDowWordsAndSpaces);
+  for (let string of breakDowWordsAndSpaces){
+    for (let item=0;item<string.length;item++){
+      string[item] = (string[item].charAt(0).toUpperCase() + string[item].slice(1));
+    }
+  }
+  console.log(breakDowWordsAndSpaces);
+  const combinedWordsAndSpaces = breakDowWordsAndSpaces.map((space) => space.join(" "));
+  console.log (combinedWordsAndSpaces);
+  return combinedWordsAndSpaces;
 }
